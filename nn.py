@@ -4,7 +4,7 @@
  # File Name : nn.py
  # Purpose : Build a simple neural network
  # Creation Date : 廿十八年一月廿六日 (週五) 十六時32分卅秒
- # Last Modified : 廿十八年一月卅一日 (週三) 十五時58分58秒
+ # Last Modified : 廿十八年一月卅一日 (週三) 十六時十分十五秒
  # Created By : SL Chung
 ##############################################################
 import tensorflow as tf
@@ -62,6 +62,9 @@ for i in range(1000):
         prediction_value = sess.run(prediction, feed_dict={xs: x_data})
         lines = ax.plot(x_data, prediction_value, 'r-', lw=5)
         plt.pause(0.1)
+        if i == 0:
+            plt.savefig("before")
 
+plt.savefig("after")
 print("DONE!")
 
