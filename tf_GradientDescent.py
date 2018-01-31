@@ -4,7 +4,7 @@
  # File Name : tf_1.py
  # Purpose : Use tensorflow to found the linear function 
  # Creation Date : 廿十八年一月廿五日 (週四) 廿一時十五分56秒
- # Last Modified : 廿十八年一月廿五日 (週四) 廿一時32分43秒
+ # Last Modified : 廿十八年一月卅一日 (週三) 十六時〇分37秒
  # Created By : SL Chung
 ##############################################################
 import tensorflow as tf
@@ -24,7 +24,7 @@ loss = tf.reduce_mean(tf.square(y-y_data))
 optimizer = tf.train.GradientDescentOptimizer(0.5)
 train = optimizer.minimize(loss)
 
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 ### create tensorflow structure end   ###
 
 sess = tf.Session()

@@ -4,7 +4,7 @@
  # File Name : nn.py
  # Purpose : Build a simple neural network
  # Creation Date : 廿十八年一月廿六日 (週五) 十六時32分卅秒
- # Last Modified : 廿十八年一月卅日 (週二) 十七時十七分33秒
+ # Last Modified : 廿十八年一月卅一日 (週三) 十五時58分58秒
  # Created By : SL Chung
 ##############################################################
 import tensorflow as tf
@@ -41,7 +41,7 @@ loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction),
 
 train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)
 
-init = tf.initialize_all_variables()
+init = tf.global_variables_initializer()
 sess = tf.Session()
 sess.run(init)
 
@@ -62,4 +62,6 @@ for i in range(1000):
         prediction_value = sess.run(prediction, feed_dict={xs: x_data})
         lines = ax.plot(x_data, prediction_value, 'r-', lw=5)
         plt.pause(0.1)
+
+print("DONE!")
 
